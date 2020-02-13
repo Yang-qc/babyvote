@@ -1,7 +1,7 @@
 package com.babyvote.common.response;
 
-import com.ketai.common.constants.ResultCodeEnum;
-import com.ketai.common.model.response.ResponseResult;
+import com.babyvote.common.constants.ResultCodeEnum;
+import com.babyvote.common.model.response.ResponseResult;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.ToString;

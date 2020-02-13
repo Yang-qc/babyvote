@@ -1,6 +1,6 @@
 package com.babyvote.common.constants;
 
-import com.ketai.common.model.response.ResultCode;
+import com.babyvote.common.model.response.ResultCode;
 import lombok.Getter;
 
 @Getter
