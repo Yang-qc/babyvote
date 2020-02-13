@@ -10,6 +10,7 @@
         <module name="babyvote-common" />
         <module name="babyvote-model" />
         <module name="babyvote-service-api" />
+        <module name="babyvote-service-util" />
         <module name="babyvote-work" />
       </profile>
     </annotationProcessing>
@@ -24,6 +25,7 @@
       <module name="babyvote-model" options="-parameters" />
       <module name="babyvote-parent" options="-parameters" />
       <module name="babyvote-service-api" options="-parameters" />
+      <module name="babyvote-service-util" options="-parameters" />
       <module name="babyvote-work" options="-parameters" />
     </option>
   </component>

@@ -15,10 +15,7 @@
 
     <dependencies>
         <!--依賴子模块-->
-        <!--<dependency>-->
-            <!--<groupId>com.babyvote</groupId>-->
-            <!--<artifactId>babyvote-common</artifactId>-->
-        <!--</dependency>-->
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
@@ -98,7 +95,12 @@
             <artifactId>mybatis-plus-annotation</artifactId>
             <version>3.3.0</version>
             <scope>compile</scope>
-        </dependency>
+        </dependency><dependency>
+        <groupId>com.ketai</groupId>
+        <artifactId>babyvote-common</artifactId>
+        <version>1.0-SNAPSHOT</version>
+        <scope>compile</scope>
+    </dependency>
         <!--服务注册-->
         <!--<dependency>
             <groupId>org.springframework.cloud</groupId>

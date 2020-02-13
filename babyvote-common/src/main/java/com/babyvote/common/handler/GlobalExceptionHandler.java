@@ -1,10 +1,10 @@
 package com.babyvote.common.handler;
 
 import com.fasterxml.jackson.core.JsonParseException;
-import com.ketai.common.constants.ResultCodeEnum;
-import com.ketai.common.exception.KetaiException;
-import com.ketai.common.response.Result;
-import com.ketai.common.util.ExceptionUtil;
+import com.babyvote.common.constants.ResultCodeEnum;
+import com.babyvote.common.exception.KetaiException;
+import com.babyvote.common.response.Result;
+import com.babyvote.common.util.ExceptionUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.jdbc.BadSqlGrammarException;
