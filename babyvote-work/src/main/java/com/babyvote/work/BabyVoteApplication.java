@@ -1,14 +1,16 @@
 package com.babyvote.work;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.scheduling.annotation.EnableScheduling;
 
 @SpringBootApplication
 @EnableScheduling
-//@EnableDiscoveryClient
-//@ComponentScan(basePackages={"com.ketai.api.**","com.ketai.activity.**",
-//        "com.ketai.model.domain"})//扫描接口
+@EnableDiscoveryClient
+//@ComponentScan(basePackages={"com.babyvote.work.**"})//扫描接口
 public class BabyVoteApplication {
     public static void main(String[] args) {
         SpringApplication.run(BabyVoteApplication.class, args);

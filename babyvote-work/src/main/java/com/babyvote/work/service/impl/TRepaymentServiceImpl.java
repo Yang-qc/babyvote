@@ -1,8 +1,10 @@
 package com.babyvote.work.service.impl;
 
+import com.babyvote.common.query.TRepaymentQuery;
 import com.babyvote.work.pojo.TRepayment;
 import com.babyvote.work.mapper.TRepaymentMapper;
 import com.babyvote.work.service.TRepaymentService;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 
@@ -17,4 +19,8 @@ import org.springframework.stereotype.Service;
 @Service
 public class TRepaymentServiceImpl extends ServiceImpl<TRepaymentMapper, TRepayment> implements TRepaymentService {
 
+    @Override
+    public void getByBorrowId(Page<TRepayment> pageParam, TRepaymentQuery tRepaymentQuery) {
+
+    }
 }
