@@ -1,6 +1,7 @@
 package com.babyvote.work.controller;
 
 
+import com.babyvote.api.pc.TRepaymentControllerApi;
 import com.babyvote.common.query.TRepaymentQuery;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -12,10 +13,7 @@ import com.babyvote.common.response.Result;
 import java.util.List;
 
 /**
- * <p>
- *  前端控制器
- * </p>
- *
+ * 还款控制器
  * @author 宝贝投项目组
  * @since 2020-02-12
  */
@@ -23,6 +21,12 @@ import java.util.List;
 @RequestMapping("/finance/repayment/")
 public class TRepaymentController {
 
+
+    /**
+     * 还款信息分页查询
+     * @param tRepaymentQuery
+     * @return
+     */
     @PostMapping("getByBorrowId")
     public Result getByBorrowId(TRepaymentQuery tRepaymentQuery){
         Page<TRepaymentQuery> pageParam = new Page<>(tRepaymentQuery.getNowPage(), tRepaymentQuery.getPageSize());

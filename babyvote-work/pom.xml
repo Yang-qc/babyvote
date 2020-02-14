@@ -83,17 +83,12 @@
             <artifactId>babyvote-common</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
-        <!--服务注册-->
-        <!--<dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
-            <exclusions>
-                <exclusion>
-                    <artifactId>guava</artifactId>
-                    <groupId>com.google.guava</groupId>
-                </exclusion>
-            </exclusions>
-        </dependency>-->
+        <dependency>
+            <groupId>com.ketai</groupId>
+            <artifactId>babyvote-service-api</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
     </dependencies>
     <build>
         <resources>

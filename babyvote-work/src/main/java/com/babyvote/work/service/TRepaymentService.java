@@ -7,7 +7,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
 
 /**
  * <p>
- *  服务类
+ *  还款服务接口
  * </p>
  *
  * @author 宝贝投项目组
