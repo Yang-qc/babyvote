@@ -22,4 +22,5 @@ public interface TRepaymentService extends IService<TRepayment> {
      * @param tRepaymentQuery
      */
     public void getByBorrowId(Page<TRepayment> pageParam, TRepaymentQuery tRepaymentQuery);
+
 }
