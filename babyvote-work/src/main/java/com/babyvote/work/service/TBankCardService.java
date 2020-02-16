@@ -13,4 +13,9 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface TBankCardService extends IService<TBankCard> {
 
+    /**
+     * 根据用户id查询银行卡信息
+     * @param UserId
+     */
+    public void getByUserId(String UserId);
 }

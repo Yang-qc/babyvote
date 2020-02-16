@@ -10,6 +10,7 @@ import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
+import org.springframework.format.annotation.DateTimeFormat;
 
 /**
  * <p>
@@ -48,7 +49,7 @@ public class TBankCard implements Serializable {
 
     @ApiModelProperty(value = "可用余额")
     private Long balance;
-
+    @DateTimeFormat(pattern="yyyy-MM-dd")
     @ApiModelProperty(value = "创建日期")
     private Date createTime;
 
