@@ -1,6 +1,6 @@
 package com.babyvote.work.service.impl;
 
-import com.babyvote.work.pojo.TBorrow;
+import com.babyvote.model.domain.TBorrow;
 import com.babyvote.work.mapper.TBorrowMapper;
 import com.babyvote.work.service.TBorrowService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;

@@ -1,4 +1,4 @@
-package com.babyvote.work.pojo;
+package com.babyvote.model.domain;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import java.util.Date;
@@ -22,20 +22,29 @@ import lombok.experimental.Accessors;
 @Data
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
-@ApiModel(value="TSystemDictionary对象", description="")
-public class TSystemDictionary implements Serializable {
+@ApiModel(value="TLoginLog对象", description="")
+public class TLoginLog implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    @ApiModelProperty(value = "字典组id")
+    @ApiModelProperty(value = "id")
     @TableId(value = "id", type = IdType.AUTO)
-    private Integer id;
+    private Long id;
 
-    @ApiModelProperty(value = "字典组编号")
-    private String code;
+    @ApiModelProperty(value = "客户端ip地址")
+    private String ip;
 
-    @ApiModelProperty(value = "字典组名称")
-    private String name;
+    @ApiModelProperty(value = "登录时间")
+    private Date loginTime;
+
+    @ApiModelProperty(value = "登录用户名")
+    private String username;
+
+    @ApiModelProperty(value = "账户类型(1:前台用户, 2:运营人员)")
+    private Integer accountType;
+
+    @ApiModelProperty(value = "登录结果(1:成功，0:失败)")
+    private Integer loginResult;
 
     @ApiModelProperty(value = "创建时间")
     private Date createTime;

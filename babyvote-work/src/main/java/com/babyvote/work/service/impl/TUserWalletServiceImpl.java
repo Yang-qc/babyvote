@@ -1,6 +1,6 @@
 package com.babyvote.work.service.impl;
 
-import com.babyvote.work.pojo.TUserWallet;
+import com.babyvote.model.domain.TUserWallet;
 import com.babyvote.work.mapper.TUserWalletMapper;
 import com.babyvote.work.service.TUserWalletService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;

@@ -1,6 +1,6 @@
 package com.babyvote.work.mapper;
 
-import com.babyvote.work.pojo.TLoginLog;
+import com.babyvote.model.domain.TLoginLog;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**

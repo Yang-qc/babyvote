@@ -1,4 +1,4 @@
-package com.babyvote.work.pojo;
+package com.babyvote.model.domain;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import java.util.Date;
@@ -22,8 +22,8 @@ import lombok.experimental.Accessors;
 @Data
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
-@ApiModel(value="TRecharge对象", description="")
-public class TRecharge implements Serializable {
+@ApiModel(value="TBankCard对象", description="")
+public class TBankCard implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -31,29 +31,23 @@ public class TRecharge implements Serializable {
     @TableId(value = "id", type = IdType.ID_WORKER_STR)
     private String id;
 
-    @ApiModelProperty(value = "充值账户id")
+    @ApiModelProperty(value = "用户id")
     private String userId;
 
-    @ApiModelProperty(value = "用户名")
-    private String username;
+    @ApiModelProperty(value = "开户人姓名")
+    private String realname;
 
-    @ApiModelProperty(value = "银行卡id")
-    private String bankCardId;
+    @ApiModelProperty(value = "银行名称")
+    private String bankName;
 
-    @ApiModelProperty(value = "交易号")
-    private String tradeNo;
+    @ApiModelProperty(value = "银行卡号")
+    private String cardNumber;
 
-    @ApiModelProperty(value = "充值金额(单位：分)")
-    private Long amount;
+    @ApiModelProperty(value = "支行名称")
+    private String branchName;
 
-    @ApiModelProperty(value = "充值日期")
-    private Date rechargeTime;
-
-    @ApiModelProperty(value = "审核状态( 0:审核拒绝  1:审核中  2:审核通过 )")
-    private Integer state;
-
-    @ApiModelProperty(value = "备注")
-    private String remark;
+    @ApiModelProperty(value = "可用余额")
+    private Long balance;
 
     @ApiModelProperty(value = "创建日期")
     private Date createTime;

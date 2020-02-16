@@ -2,7 +2,7 @@ package com.babyvote.work.controller;
 
 
 import com.babyvote.api.pc.TRepaymentControllerApi;
-import com.babyvote.common.query.TRepaymentQuery;
+import com.babyvote.common.request.TRepaymentQuery;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

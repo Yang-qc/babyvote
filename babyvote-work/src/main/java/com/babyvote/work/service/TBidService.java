@@ -1,6 +1,6 @@
 package com.babyvote.work.service;
 
-import com.babyvote.work.pojo.TBid;
+import com.babyvote.model.domain.TBid;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**

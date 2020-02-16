@@ -2,7 +2,7 @@ package com.babyvote.work.controller;
 
 
 import com.babyvote.common.response.Result;
-import com.babyvote.work.pojo.TBankCard;
+import com.babyvote.model.domain.TBankCard;
 import com.babyvote.work.service.TBankCardService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;

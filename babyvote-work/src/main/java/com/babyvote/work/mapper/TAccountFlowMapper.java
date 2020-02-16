@@ -1,6 +1,6 @@
 package com.babyvote.work.mapper;
 
-import com.babyvote.work.pojo.TAccountFlow;
+import com.babyvote.model.domain.TAccountFlow;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**

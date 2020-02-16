@@ -1,7 +1,7 @@
 package com.babyvote.work.service;
 
-import com.babyvote.common.query.TRepaymentQuery;
-import com.babyvote.work.pojo.TRepayment;
+import com.babyvote.common.request.TRepaymentQuery;
+import com.babyvote.model.domain.TRepayment;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.IService;
 

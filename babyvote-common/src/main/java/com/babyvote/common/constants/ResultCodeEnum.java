@@ -23,11 +23,14 @@ public enum ResultCodeEnum implements ResultCode {
     URL_ENCODE_ERROR(false, 21015, "URL编码错误"),
     FETCH_ACCESSTOKEN_FAILD(false, 21016, "获取访问令牌失败"),
     FETCH_USERINFO_ERROR(false, 21017, "用户账号或密码错误"),
-    ILLEGAL_CALLBACK_REQUEST_ERROR(false, 21018, "非法回调请求错误")
+    ILLEGAL_CALLBACK_REQUEST_ERROR(false, 21018, "非法回调请求错误"),
+    DATA_DICTIONARY_MODIFICATION_FAILED(false,21019,"数据字典修改失败！"),
+    DATA_DICTIONARY_ADD_TO_FAILED(false,21020,"数据字典添加失败！"),
 
+    DATA_DICTIONARY_ENTRY_MODIFICATION_FAILED(false,21021,"数据字典项修改失败！"),
+    DATA_DICTIONARY_ENTRY_ADD_TO_FAILED(false,21022,"数据字典项添加失败！"),
 
-
-
+    FAILED_TO_ADD_LOG(false,21023,"日志添加失败！")
     ;
 
 

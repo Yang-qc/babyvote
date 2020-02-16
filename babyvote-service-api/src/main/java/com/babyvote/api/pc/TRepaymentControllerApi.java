@@ -1,6 +1,5 @@
 package com.babyvote.api.pc;
 
-import com.babyvote.common.query.TRepaymentQuery;
 import com.babyvote.common.response.Result;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;

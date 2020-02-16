@@ -1,6 +1,6 @@
 package com.babyvote.work.service;
 
-import com.babyvote.work.pojo.TUserInfo;
+import com.babyvote.model.domain.TUserInfo;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**

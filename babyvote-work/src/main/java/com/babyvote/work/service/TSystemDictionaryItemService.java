@@ -1,6 +1,9 @@
 package com.babyvote.work.service;
 
-import com.babyvote.work.pojo.TSystemDictionaryItem;
+import com.babyvote.common.request.dictionary.DictionaryItemRequest;
+import com.babyvote.model.domain.TSystemDictionary;
+import com.babyvote.model.domain.TSystemDictionaryItem;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**
@@ -13,4 +16,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface TSystemDictionaryItemService extends IService<TSystemDictionaryItem> {
 
+    void getAll(Page<TSystemDictionaryItem> pageParam, DictionaryItemRequest dictionaryRequest);
 }

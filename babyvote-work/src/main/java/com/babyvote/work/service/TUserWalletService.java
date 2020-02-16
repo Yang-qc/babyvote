@@ -1,6 +1,6 @@
 package com.babyvote.work.service;
 
-import com.babyvote.work.pojo.TUserWallet;
+import com.babyvote.model.domain.TUserWallet;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**

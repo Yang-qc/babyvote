@@ -1,6 +1,6 @@
 package com.babyvote.work.service;
 
-import com.babyvote.work.pojo.TBankCard;
+import com.babyvote.model.domain.TBankCard;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**

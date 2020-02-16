@@ -1,4 +1,4 @@
-package com.babyvote.work.pojo;
+package com.babyvote.model.domain;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import java.util.Date;
@@ -22,23 +22,20 @@ import lombok.experimental.Accessors;
 @Data
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
-@ApiModel(value="TSystemDictionaryItem对象", description="")
-public class TSystemDictionaryItem implements Serializable {
+@ApiModel(value="TSystemDictionary对象", description="")
+public class TSystemDictionary implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    @ApiModelProperty(value = "字典项id")
+    @ApiModelProperty(value = "字典组id")
     @TableId(value = "id", type = IdType.AUTO)
     private Integer id;
 
-    @ApiModelProperty(value = "父id")
-    private Integer parentId;
+    @ApiModelProperty(value = "字典组编号")
+    private String code;
 
-    @ApiModelProperty(value = "字典项值")
-    private String value;
-
-    @ApiModelProperty(value = "排序号(正序)")
-    private Integer orderNo;
+    @ApiModelProperty(value = "字典组名称")
+    private String name;
 
     @ApiModelProperty(value = "创建时间")
     private Date createTime;

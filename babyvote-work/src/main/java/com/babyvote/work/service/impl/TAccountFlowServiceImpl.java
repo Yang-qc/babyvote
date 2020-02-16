@@ -1,6 +1,6 @@
 package com.babyvote.work.service.impl;
 
-import com.babyvote.work.pojo.TAccountFlow;
+import com.babyvote.model.domain.TAccountFlow;
 import com.babyvote.work.mapper.TAccountFlowMapper;
 import com.babyvote.work.service.TAccountFlowService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;

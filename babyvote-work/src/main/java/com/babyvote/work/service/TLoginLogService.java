@@ -1,6 +1,8 @@
 package com.babyvote.work.service;
 
-import com.babyvote.work.pojo.TLoginLog;
+import com.babyvote.common.request.LoginLogRequest;
+import com.babyvote.model.domain.TLoginLog;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**
@@ -13,4 +15,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface TLoginLogService extends IService<TLoginLog> {
 
+    void query(Page<TLoginLog> pageParam, LoginLogRequest loginLogRequest);
 }

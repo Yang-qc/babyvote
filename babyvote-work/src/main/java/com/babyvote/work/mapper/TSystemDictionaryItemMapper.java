@@ -1,6 +1,6 @@
 package com.babyvote.work.mapper;
 
-import com.babyvote.work.pojo.TSystemDictionaryItem;
+import com.babyvote.model.domain.TSystemDictionaryItem;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**

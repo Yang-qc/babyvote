@@ -1,6 +1,6 @@
 package com.babyvote.work.service.impl;
 
-import com.babyvote.work.pojo.TBankCard;
+import com.babyvote.model.domain.TBankCard;
 import com.babyvote.work.mapper.TBankCardMapper;
 import com.babyvote.work.service.TBankCardService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;

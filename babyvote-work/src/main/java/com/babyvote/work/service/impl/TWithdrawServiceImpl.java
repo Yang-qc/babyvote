@@ -1,6 +1,6 @@
 package com.babyvote.work.service.impl;
 
-import com.babyvote.work.pojo.TWithdraw;
+import com.babyvote.model.domain.TWithdraw;
 import com.babyvote.work.mapper.TWithdrawMapper;
 import com.babyvote.work.service.TWithdrawService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
