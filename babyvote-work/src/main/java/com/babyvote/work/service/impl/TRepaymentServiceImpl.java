@@ -1,7 +1,7 @@
 package com.babyvote.work.service.impl;
 
-import com.babyvote.common.query.TRepaymentQuery;
-import com.babyvote.work.pojo.TRepayment;
+import com.babyvote.common.request.TRepaymentQuery;
+import com.babyvote.model.domain.TRepayment;
 import com.babyvote.work.mapper.TRepaymentMapper;
 import com.babyvote.work.service.TRepaymentService;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;

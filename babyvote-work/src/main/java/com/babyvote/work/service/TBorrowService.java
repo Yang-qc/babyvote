@@ -1,6 +1,7 @@
 package com.babyvote.work.service;
 
-import com.babyvote.work.pojo.TBorrow;
+
+import com.babyvote.model.domain.TBorrow;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.IService;
 

@@ -3,7 +3,7 @@ package com.babyvote.work.controller;
 
 import com.babyvote.common.response.Result;
 import com.babyvote.common.response.ResultListPage;
-import com.babyvote.work.pojo.TBorrow;
+import com.babyvote.model.domain.TBorrow;
 import com.babyvote.work.service.TBorrowService;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import org.springframework.beans.factory.annotation.Autowired;

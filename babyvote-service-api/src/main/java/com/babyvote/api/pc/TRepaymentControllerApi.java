@@ -1,5 +1,6 @@
 package com.babyvote.api.pc;
 
+import com.babyvote.common.request.TRepaymentQuery;
 import com.babyvote.common.response.Result;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -10,6 +11,6 @@ public interface TRepaymentControllerApi {
 
     @ApiOperation("还款信息分页查询")
     public Result getByBorrowId(
-            @ApiParam(name = "tRepaymentQuery", value = "还款查询对象", required = true)TRepaymentQuery tRepaymentQuery
+            @ApiParam(name = "tRepaymentQuery", value = "还款查询对象", required = true) TRepaymentQuery tRepaymentQuery
     );
 }

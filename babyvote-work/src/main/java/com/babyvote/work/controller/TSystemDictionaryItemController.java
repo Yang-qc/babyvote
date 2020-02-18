@@ -7,7 +7,6 @@ import com.babyvote.common.exception.ExceptionThrowOut;
 import com.babyvote.common.request.dictionary.DictionaryItemRequest;
 import com.babyvote.common.response.Result;
 import com.babyvote.common.response.ResultListPage;
-import com.babyvote.model.domain.TSystemDictionary;
 import com.babyvote.model.domain.TSystemDictionaryItem;
 import com.babyvote.work.service.TSystemDictionaryItemService;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
