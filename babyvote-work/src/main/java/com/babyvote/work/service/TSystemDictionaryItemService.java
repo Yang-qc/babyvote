@@ -13,4 +13,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface TSystemDictionaryItemService extends IService<TSystemDictionaryItem> {
 
+   TSystemDictionaryItem findItemByid(String  id);
 }

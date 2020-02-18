@@ -44,19 +44,19 @@ public class TUserInfo implements Serializable {
     private String phoneNumber;
 
     @ApiModelProperty(value = "收入等级id")
-    private Integer incomeLevelId;
+    private String incomeLevelId;
 
     @ApiModelProperty(value = "婚姻状况id")
-    private Integer marriageId;
+    private String marriageId;
 
     @ApiModelProperty(value = "教育背景id")
-    private Integer eduBackgroundId;
+    private String eduBackgroundId;
 
     @ApiModelProperty(value = "住房情况id")
-    private Integer houseConditionId;
+    private String houseConditionId;
 
     @ApiModelProperty(value = "创建时间")
-    private Date createTime;
+    private String createTime;
 
 
 }

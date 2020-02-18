@@ -17,4 +17,8 @@ import org.springframework.stereotype.Service;
 @Service
 public class TUserAccountServiceImpl extends ServiceImpl<TUserAccountMapper, TUserAccount> implements TUserAccountService {
 
+    @Override
+    public TUserAccount findUserAccountByBorrowId(Integer id) {
+        return baseMapper.selectById(id);
+    }
 }

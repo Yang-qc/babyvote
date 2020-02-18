@@ -71,7 +71,7 @@ public class TRepaymentDetail implements Serializable {
     private Integer repaymentType;
 
     @ApiModelProperty(value = "创建时间")
-    private Date createTime;
+    private String createTime;
 
 
 }

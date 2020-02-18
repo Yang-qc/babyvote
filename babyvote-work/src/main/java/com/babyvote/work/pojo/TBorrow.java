@@ -52,7 +52,7 @@ public class TBorrow implements Serializable {
     @ApiModelProperty(value = "借款状态")
     private Integer borrowState;
 
-    @ApiModelProperty(value = "借款总金额(单位：分)")
+        @ApiModelProperty(value = "借款总金额(单位：分)")
     private Long borrowAmount;
 
     @ApiModelProperty(value = "年化率")

@@ -2,6 +2,8 @@ package com.babyvote.work.service;
 
 import com.babyvote.work.pojo.TUserInfo;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.sun.imageio.plugins.common.I18N;
+import io.swagger.models.auth.In;
 
 /**
  * <p>
@@ -13,4 +15,11 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface TUserInfoService extends IService<TUserInfo> {
 
+    /**
+     * 根据id查询借款人信息
+     * @param id
+     * @return
+     * @auther 李
+     */
+    TUserInfo findById(Integer id);
 }

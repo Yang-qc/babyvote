@@ -46,5 +46,6 @@ public class TRepaymentServiceImpl extends ServiceImpl<TRepaymentMapper, TRepaym
         if (!StringUtils.isEmpty(userId)) {
             queryWrapper.eq("user_id", userId);
         }
+
     }
 }

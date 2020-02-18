@@ -27,12 +27,12 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="babyvote-common" options="-parameters" />
-      <module name="babyvote-model" options="-parameters" />
+      <module name="babyvote-common" options="" />
+      <module name="babyvote-model" options="" />
       <module name="babyvote-parent" options="-parameters" />
-      <module name="babyvote-service-api" options="-parameters" />
-      <module name="babyvote-service-util" options="-parameters" />
-      <module name="babyvote-work" options="-parameters" />
+      <module name="babyvote-service-api" options="" />
+      <module name="babyvote-service-util" options="" />
+      <module name="babyvote-work" options="" />
     </option>
   </component>
 </project>
