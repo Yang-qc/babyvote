@@ -1,6 +1,6 @@
 package com.babyvote.work.service;
 
-import com.babyvote.work.pojo.TUserInfo;
+import com.babyvote.model.domain.TUserInfo;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.sun.imageio.plugins.common.I18N;
 import io.swagger.models.auth.In;

@@ -1,6 +1,6 @@
 package com.babyvote.work.mapper;
 
-import com.babyvote.work.pojo.TUserInfo;
+import com.babyvote.model.domain.TUserInfo;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**

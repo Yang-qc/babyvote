@@ -1,6 +1,6 @@
 package com.babyvote.work.service.impl;
 
-import com.babyvote.work.pojo.TRepaymentDetail;
+import com.babyvote.model.domain.TRepaymentDetail;
 import com.babyvote.work.mapper.TRepaymentDetailMapper;
 import com.babyvote.work.pojo.TRepaymentDetailVo;
 import com.babyvote.work.service.TRepaymentDetailService;

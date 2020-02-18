@@ -1,19 +1,21 @@
-package com.babyvote.common.query;
+package com.babyvote.model.domain;
 
 import com.baomidou.mybatisplus.annotation.IdType;
+import java.util.Date;
+import com.baomidou.mybatisplus.annotation.Version;
 import com.baomidou.mybatisplus.annotation.TableId;
+import java.io.Serializable;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
-import org.springframework.format.annotation.DateTimeFormat;
-
-import java.io.Serializable;
-import java.util.Date;
 
 /**
- * 还款信息查询类
+ * <p>
+ * 
+ * </p>
+ *
  * @author 宝贝投项目组
  * @since 2020-02-12
  */
@@ -21,7 +23,8 @@ import java.util.Date;
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
 @ApiModel(value="TRepayment对象", description="")
-public class TRepaymentQuery implements Serializable {
+public class TRepayment implements Serializable {
+
     private static final long serialVersionUID = 1L;
 
     @ApiModelProperty(value = "id")
@@ -37,11 +40,9 @@ public class TRepaymentQuery implements Serializable {
     @ApiModelProperty(value = "借款标题")
     private String borrowTitle;
 
-    @DateTimeFormat(pattern="yyyy-MM-dd")
     @ApiModelProperty(value = "截止日期")
     private Date deadline;
 
-    @DateTimeFormat(pattern="yyyy-MM-dd")
     @ApiModelProperty(value = "还款日期")
     private Date repaymentTime;
 
@@ -66,15 +67,8 @@ public class TRepaymentQuery implements Serializable {
     @ApiModelProperty(value = "还款方式（1等额本息,2先息后本）")
     private Integer repaymentType;
 
-    @DateTimeFormat(pattern="yyyy-MM-dd")
     @ApiModelProperty(value = "创建时间")
     private Date createTime;
-
-    @ApiModelProperty(value = "当前页码")
-    private Integer nowPage;
-
-    @ApiModelProperty(value = "每页展示数量")
-    private Integer pageSize;
 
 
 }

@@ -1,6 +1,6 @@
 package com.babyvote.work.service;
 
-import com.babyvote.work.pojo.TRecharge;
+import com.babyvote.model.domain.TRecharge;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**

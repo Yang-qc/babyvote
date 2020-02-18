@@ -1,6 +1,6 @@
 package com.babyvote.work.service.impl;
 
-import com.babyvote.work.pojo.TUserInfo;
+import com.babyvote.model.domain.TUserInfo;
 import com.babyvote.work.mapper.TUserInfoMapper;
 import com.babyvote.work.service.TSystemDictionaryItemService;
 import com.babyvote.work.service.TUserAccountService;

@@ -2,13 +2,10 @@ package com.babyvote.work.controller;
 
 
 import com.babyvote.common.response.Result;
-import com.babyvote.work.pojo.TBankCard;
+import com.babyvote.model.domain.TBankCard;
 import com.babyvote.work.service.TBankCardService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  *银行卡控制器
@@ -28,7 +25,7 @@ public class  TBankCardController {
      */
     @PostMapping("add")
     public Result add(TBankCard tBankCard){
-        System.out.println("获取用户id："+tBankCard.getUserId());
+        System.out.println("获取用户信息："+tBankCard);
         //绑定银行卡默认赠送体验价10000
         tBankCard.setBalance((long)10000);
         tBankCardService.save(tBankCard);
@@ -41,8 +38,11 @@ public class  TBankCardController {
      * @return
      */
     @PostMapping("get/{accountId}")
-    public Result getBankInfo(Integer accountId){
+    public Result getBankInfo(@PathVariable String accountId){
+        System.out.println("获取银行卡信息");
+//        tBankCardService.getByUserId(accountId);
         return Result.ok();
+
     }
 }
 

@@ -1,4 +1,4 @@
-package com.babyvote.work.pojo;
+package com.babyvote.model.domain;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import java.util.Date;
@@ -22,8 +22,8 @@ import lombok.experimental.Accessors;
 @Data
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
-@ApiModel(value="TBankCard对象", description="")
-public class TBankCard implements Serializable {
+@ApiModel(value="TWithdraw对象", description="")
+public class TWithdraw implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -31,14 +31,20 @@ public class TBankCard implements Serializable {
     @TableId(value = "id", type = IdType.ID_WORKER_STR)
     private String id;
 
-    @ApiModelProperty(value = "用户id")
+    @ApiModelProperty(value = "提现账户id")
     private String userId;
 
-    @ApiModelProperty(value = "开户人姓名")
-    private String realname;
+    @ApiModelProperty(value = "提现金额(单位：分)")
+    private Long amount;
+
+    @ApiModelProperty(value = "手续费(单位：分)")
+    private Long fee;
 
     @ApiModelProperty(value = "银行名称")
     private String bankName;
+
+    @ApiModelProperty(value = "开户人姓名")
+    private String realname;
 
     @ApiModelProperty(value = "银行卡号")
     private String cardNumber;
@@ -46,10 +52,7 @@ public class TBankCard implements Serializable {
     @ApiModelProperty(value = "支行名称")
     private String branchName;
 
-    @ApiModelProperty(value = "可用余额")
-    private Long balance;
-
-    @ApiModelProperty(value = "创建日期")
+    @ApiModelProperty(value = "创建时间")
     private Date createTime;
 
 

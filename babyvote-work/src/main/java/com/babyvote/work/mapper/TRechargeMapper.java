@@ -1,6 +1,6 @@
 package com.babyvote.work.mapper;
 
-import com.babyvote.work.pojo.TRecharge;
+import com.babyvote.model.domain.TRecharge;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**

@@ -1,6 +1,6 @@
 package com.babyvote.work.service.impl;
 
-import com.babyvote.work.pojo.TBid;
+import com.babyvote.model.domain.TBid;
 import com.babyvote.work.mapper.TBidMapper;
 import com.babyvote.work.service.TBidService;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;

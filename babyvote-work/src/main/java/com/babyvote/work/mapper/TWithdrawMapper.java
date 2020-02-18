@@ -1,6 +1,6 @@
 package com.babyvote.work.mapper;
 
-import com.babyvote.work.pojo.TWithdraw;
+import com.babyvote.model.domain.TWithdraw;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**
