@@ -28,8 +28,9 @@ public class TSystemDictionaryItemServiceImpl extends ServiceImpl<TSystemDiction
         String keyword = dictionaryRequest.getKeyword();
         String parentId = dictionaryRequest.getParentId();
         // 根据时间排序
-        queryWrapper.orderByDesc("create_time");
-        if (StringUtils.isNotBlank(parentId)) {
+        queryWrapper.orderByAsc("order_no");
+
+        if (StringUtils.isNotBlank(parentId) && !StringUtils.equals(parentId,"0")) {
             queryWrapper.eq("parent_id", parentId);
         }
         if (StringUtils.isNotBlank(keyword)) {

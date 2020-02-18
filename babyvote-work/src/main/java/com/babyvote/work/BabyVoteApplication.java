@@ -12,7 +12,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @EnableScheduling
 @EnableDiscoveryClient
 @EnableSwagger2
-//@ComponentScan(basePackages={"com.babyvote.work.**"})//扫描接口
+@ComponentScan(basePackages={"com.babyvote.common","com.babyvote.work"})//扫描接口
 public class BabyVoteApplication {
     public static void main(String[] args) {
         SpringApplication.run(BabyVoteApplication.class, args);

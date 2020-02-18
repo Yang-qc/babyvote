@@ -18,8 +18,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 public interface TSystemDictionaryControllerApi {
 
     @ApiOperation(value = "查询全部数据项")
-    public Result getAll(@ApiParam(name = "dictionaryRequest", value = "字典组查询实体") DictionaryRequest dictionaryRequest);
+    public Result getAll();
 
+    @ApiOperation(value = "分页全部数据项")
+    public Result query(@ApiParam(name = "dictionaryRequest", value = "字典组查询实体") DictionaryRequest dictionaryRequest);
 
     @ApiOperation(value = "修改数据组")
     public Result update(@ApiParam(name = "TsystemDictionary" ,value = "字典组实体") TSystemDictionary systemDictionary);

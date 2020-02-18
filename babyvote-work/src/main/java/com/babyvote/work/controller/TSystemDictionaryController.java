@@ -4,6 +4,7 @@ package com.babyvote.work.controller;
 import com.babyvote.api.admin.TSystemDictionaryControllerApi;
 import com.babyvote.common.constants.ResultCodeEnum;
 import com.babyvote.common.exception.ExceptionThrowOut;
+import com.babyvote.common.exception.KetaiException;
 import com.babyvote.common.model.response.ResultCode;
 import com.babyvote.common.request.dictionary.DictionaryRequest;
 import com.babyvote.common.response.Result;
@@ -35,14 +36,25 @@ public class TSystemDictionaryController implements TSystemDictionaryControllerA
     @Autowired
     private TSystemDictionaryService tSystemDictionaryService;
 
+    @Override
+    @PostMapping("getAll")
+    public Result getAll() {
+        try {
+            return Result.ok(tSystemDictionaryService.list());
+        }catch (Exception e){
+            log.error("查询全部字典失败！具体错误：{}",e.getMessage());
+            throw new KetaiException(ResultCodeEnum.DATA_DICTIONARY_MODIFICATION_FAILED);
+        }
+    }
+
     /**
      * @描述 查询数据字典，可根据字典名称模糊查询
      * @参数注释： 封装查询对象
      * @创建人 周
      */
     @Override
-    @PostMapping("getAll")
-    public Result getAll(DictionaryRequest dictionaryRequest) {
+    @PostMapping("query")
+    public Result query(DictionaryRequest dictionaryRequest) {
         if (StringUtils.isEmpty(dictionaryRequest.getNowPage())) {
             dictionaryRequest.setNowPage(0L);
             dictionaryRequest.setPageSize(5L);
@@ -62,9 +74,8 @@ public class TSystemDictionaryController implements TSystemDictionaryControllerA
             tSystemDictionaryService.updateById(systemDictionary);
             return Result.ok();
         }catch (Exception e){
-            ExceptionThrowOut.cast(ResultCodeEnum.DATA_DICTIONARY_MODIFICATION_FAILED);
             log.error("修改数据字典失败！具体错误：{}",e.getMessage());
-            return Result.error();
+            throw new KetaiException(ResultCodeEnum.DATA_DICTIONARY_MODIFICATION_FAILED);
         }
     }
     /**
@@ -78,9 +89,8 @@ public class TSystemDictionaryController implements TSystemDictionaryControllerA
             tSystemDictionaryService.save(systemDictionary);
             return Result.ok();
         }catch (Exception e){
-            ExceptionThrowOut.cast(ResultCodeEnum.DATA_DICTIONARY_ADD_TO_FAILED);
             log.error("添加数据字典失败！具体错误：{}",e.getMessage());
-            return Result.error();
+            throw new KetaiException(ResultCodeEnum.DATA_DICTIONARY_ADD_TO_FAILED);
         }
     }
 }
