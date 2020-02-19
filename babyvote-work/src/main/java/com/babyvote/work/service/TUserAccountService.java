@@ -13,4 +13,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface TUserAccountService extends IService<TUserAccount> {
 
+    TUserAccount findUserAccountByBorrowId(Integer id);
 }

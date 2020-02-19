@@ -4,10 +4,10 @@ package com.babyvote.work.controller;
 import com.babyvote.api.admin.TSystemDictionaryItemControllerApi;
 import com.babyvote.common.constants.ResultCodeEnum;
 import com.babyvote.common.exception.ExceptionThrowOut;
+import com.babyvote.common.exception.KetaiException;
 import com.babyvote.common.request.dictionary.DictionaryItemRequest;
 import com.babyvote.common.response.Result;
 import com.babyvote.common.response.ResultListPage;
-import com.babyvote.model.domain.TSystemDictionary;
 import com.babyvote.model.domain.TSystemDictionaryItem;
 import com.babyvote.work.service.TSystemDictionaryItemService;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
@@ -57,9 +57,8 @@ public class TSystemDictionaryItemController implements TSystemDictionaryItemCon
             tSystemDictionaryItemService.updateById(tSystemDictionaryItem);
             return Result.ok();
         }catch (Exception e){
-            ExceptionThrowOut.cast(ResultCodeEnum.DATA_DICTIONARY_ENTRY_MODIFICATION_FAILED);
             log.error("修改数据字典项失败！具体错误：{}",e.getMessage());
-            return Result.error();
+            throw new KetaiException((ResultCodeEnum.DATA_DICTIONARY_ENTRY_MODIFICATION_FAILED));
         }
     }
     /**
@@ -74,9 +73,8 @@ public class TSystemDictionaryItemController implements TSystemDictionaryItemCon
             log.debug("添加数据字典项成功！");
             return Result.ok();
         }catch (Exception e){
-            ExceptionThrowOut.cast(ResultCodeEnum.DATA_DICTIONARY_ENTRY_ADD_TO_FAILED);
             log.error("添加数据字典项失败！具体错误：{}",e.getMessage());
-            return Result.error();
+            throw new KetaiException(ResultCodeEnum.DATA_DICTIONARY_ENTRY_ADD_TO_FAILED);
         }
     }
 }

@@ -3,7 +3,7 @@ package com.babyvote.work.service;
 import com.babyvote.common.request.TRechargeQuery;
 import com.babyvote.common.request.TRepaymentQuery;
 import com.babyvote.model.domain.TRecharge;
-import com.babyvote.model.domain.TRepayment;
+import com.babyvote.work.pojo.RequestParam;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.IService;
 
@@ -16,10 +16,21 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @since 2020-02-12
  */
 public interface TRechargeService extends IService<TRecharge> {
+
     /**
-     * 充值记录查询
-     * @param pageParam
-     * @param tRechargeQuery
+     * 根据时间和状态查询充值数据
+     * @param param
+     * @auther 李
      */
-    public void selectAll(Page<TRecharge> pageParam, TRechargeQuery tRechargeQuery);
+    void findByTimeAndState(Page<TRecharge> pageParam, RequestParam param);
+
+    /**
+     * 充值审批，
+     * 审核成功——>用户余额增加——>生成一条线上充值账户流水；
+     *
+     * @param tRecharge
+     * @param
+     * @return
+     */
+    int auditTRecharge(TRecharge tRecharge);
 }

@@ -23,6 +23,11 @@ public class ResultListPage<T> implements Serializable {
         this.model = model;
     }
 
+    public ResultListPage(T datalist, long allCount) {
+        this.datalist = datalist;
+        this.allCount = allCount;
+
+    }
     public ResultListPage(T datalist, long allPage, long allCount, long nowPage, long pageSize) {
         this.datalist = datalist;
         this.allPage = allPage;

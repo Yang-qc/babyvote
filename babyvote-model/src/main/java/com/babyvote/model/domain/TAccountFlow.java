@@ -29,7 +29,7 @@ public class TAccountFlow implements Serializable {
 
     @ApiModelProperty(value = "id")
     @TableId(value = "id", type = IdType.AUTO)
-    private Long id;
+    private Integer id;
 
     @ApiModelProperty(value = "账户id")
     private String accountId;

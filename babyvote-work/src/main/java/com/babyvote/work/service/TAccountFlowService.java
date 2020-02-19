@@ -5,7 +5,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
 
 /**
  * <p>
- *  服务类
+ *  账户流水 服务类
  * </p>
  *
  * @author 宝贝投项目组
@@ -13,4 +13,13 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface TAccountFlowService extends IService<TAccountFlow> {
 
+    /**
+     * 生成一条账户流水
+     * 1. 充值审批成功后生成流水
+     * 2.
+     * @param tAccountFlow
+     * @return
+     * @auther 李
+     */
+    int insertTAccountFlow(TAccountFlow tAccountFlow);
 }

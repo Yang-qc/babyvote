@@ -1,15 +1,16 @@
 package com.babyvote.work.controller;
 
 
-import com.babyvote.common.request.TRechargeQuery;
 import com.babyvote.common.response.Result;
 import com.babyvote.common.response.ResultListPage;
 import com.babyvote.model.domain.TRecharge;
+import com.babyvote.work.pojo.RequestParam;
 import com.babyvote.work.service.TRechargeService;
+import com.baomidou.mybatisplus.extension.api.R;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import org.springframework.web.bind.annotation.RestController;
@@ -23,32 +24,39 @@ import org.springframework.web.bind.annotation.RestController;
  * @since 2020-02-12
  */
 @RestController
-@RequestMapping("/system/recharge/")
+@RequestMapping("/system/recharge")
 public class TRechargeController {
 
     @Autowired
-    private TRechargeService tRechargeService;
+    private TRechargeService rechargeService;
 
-    @PostMapping("add")
-    public Result add(TRecharge tRecharge){
-        System.out.println("开始进行充值。。。开始钱包清算。。。");
-        //默认充值状态为1审核中，后台进行审核后更改
-        tRecharge.setState(1);
-        tRechargeService.save(tRecharge);
-        return Result.ok();
+    /**
+     *  根据时间和状态查询充值数据
+     * @param param
+     * @auther 李
+     */
+    @PostMapping("findRecharge")
+    public Result findRecharge(@RequestBody RequestParam param){
+        Page<TRecharge> page = new Page<>(param.getNowPage(), param.getPageSize());
+        rechargeService.findByTimeAndState(page,param);
+        return Result.ok(new ResultListPage(page.getRecords(),page.getTotal()));
     }
 
-    @PostMapping("query")
-    public Result query(TRechargeQuery tRechargeQuery){
-        if (StringUtils.isEmpty(tRechargeQuery.getNowPage())){
-            tRechargeQuery.setNowPage(1);
-            tRechargeQuery.setPageSize(5);
+    /**
+     * 充值审批，
+     * 审核成功——>用户余额增加——>银行卡余额减少——>生成一条线上充值账户流水；
+     * 审核失败——>银行卡的钱回退
+     * @param tRecharge
+     * @return
+     * @auther 李
+     */
+    @PostMapping("auditTRecharge")
+    public Result auditTRecharge(@RequestBody TRecharge tRecharge){
+        int i = rechargeService.auditTRecharge(tRecharge);
+        if(i>1){//审核成功
+            return Result.ok();
         }
-        Page<TRecharge> pageParam = new Page<>(tRechargeQuery.getNowPage(), tRechargeQuery.getPageSize());
-        tRechargeService.selectAll(pageParam, tRechargeQuery);
-        return Result.ok(new ResultListPage(pageParam.getRecords(), pageParam.getPages(), pageParam.getTotal(), pageParam.getCurrent(), pageParam.getSize()));
+        return Result.error();//失败
     }
-
-
 }
 

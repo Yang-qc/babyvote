@@ -43,14 +43,14 @@ public class TLoginLogServiceImpl extends ServiceImpl<TLoginLogMapper, TLoginLog
         if (!StringUtils.isEmpty(beginDate)) {
             queryWrapper.lt("login_time", endDate);
         }
-        if (!StringUtils.isEmpty(loginResult)) {
+        if (!StringUtils.isEmpty(loginResult) && -1 != loginResult) {
             queryWrapper.eq("login_result", loginResult);
         }
         if (!StringUtils.isEmpty(username)) {
             queryWrapper.like("username", username);
         }
 
-        if (!StringUtils.isEmpty(loginResult)) {
+        if (!StringUtils.isEmpty(accountType) && -1 != accountType) {
             queryWrapper.eq("account_type", accountType);
         }
         baseMapper.selectPage(pageParam, queryWrapper);
