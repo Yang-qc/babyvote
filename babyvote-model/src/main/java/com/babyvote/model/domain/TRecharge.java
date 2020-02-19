@@ -10,6 +10,7 @@ import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
+import org.springframework.format.annotation.DateTimeFormat;
 
 /**
  * <p>
@@ -46,6 +47,7 @@ public class TRecharge implements Serializable {
     @ApiModelProperty(value = "充值金额(单位：分)")
     private Long amount;
 
+    @DateTimeFormat(pattern="yyyy-MM-dd")
     @ApiModelProperty(value = "充值日期")
     private Date rechargeTime;
 
@@ -55,6 +57,7 @@ public class TRecharge implements Serializable {
     @ApiModelProperty(value = "备注")
     private String remark;
 
+    @DateTimeFormat(pattern="yyyy-MM-dd")
     @ApiModelProperty(value = "创建日期")
     private Date createTime;
 
