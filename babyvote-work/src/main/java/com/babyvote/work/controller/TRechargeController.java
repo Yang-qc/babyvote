@@ -56,6 +56,7 @@ public class TRechargeController {
         if(i>1){//审核成功
             return Result.ok();
         }
+
         return Result.error();//失败
     }
 }
