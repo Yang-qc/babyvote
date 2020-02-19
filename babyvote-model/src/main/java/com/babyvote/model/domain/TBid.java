@@ -59,7 +59,7 @@ public class TBid implements Serializable {
     private Date bidTime;
 
     @ApiModelProperty(value = "创建日期")
-    private Date createTime;
+    private String createTime;
 
 
 }

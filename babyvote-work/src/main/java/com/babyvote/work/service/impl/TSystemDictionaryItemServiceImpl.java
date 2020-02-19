@@ -1,7 +1,6 @@
 package com.babyvote.work.service.impl;
 
 import com.babyvote.common.request.dictionary.DictionaryItemRequest;
-import com.babyvote.model.domain.TSystemDictionary;
 import com.babyvote.model.domain.TSystemDictionaryItem;
 import com.babyvote.work.mapper.TSystemDictionaryItemMapper;
 import com.babyvote.work.service.TSystemDictionaryItemService;
@@ -23,6 +22,11 @@ import org.springframework.stereotype.Service;
 public class TSystemDictionaryItemServiceImpl extends ServiceImpl<TSystemDictionaryItemMapper, TSystemDictionaryItem> implements TSystemDictionaryItemService {
 
     @Override
+    public TSystemDictionaryItem findItemByid(String id) {
+        return baseMapper.selectById(id);
+    }
+
+//    @Override
     public void getAll(Page<TSystemDictionaryItem> pageParam, DictionaryItemRequest dictionaryRequest) {
         QueryWrapper<TSystemDictionaryItem> queryWrapper = new QueryWrapper<>();
         String keyword = dictionaryRequest.getKeyword();

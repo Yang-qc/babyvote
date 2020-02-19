@@ -18,6 +18,9 @@ yanxue-common/target/
 *.iws
 *.iml
 *.ipr
+.idea/*
+.idea*
+\.idea*
 target/
 
 ### NetBeans ###
