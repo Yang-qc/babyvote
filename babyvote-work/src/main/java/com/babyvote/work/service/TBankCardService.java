@@ -2,6 +2,7 @@ package com.babyvote.work.service;
 
 import com.babyvote.model.domain.TBankCard;
 import com.baomidou.mybatisplus.extension.service.IService;
+import io.swagger.models.auth.In;
 
 /**
  * <p>
@@ -18,4 +19,13 @@ public interface TBankCardService extends IService<TBankCard> {
      * @param UserId
      */
     public void getByUserId(String UserId);
+
+    /**
+     * 充值审核失败，银行卡的钱回退
+     * @param UserId
+     * @return
+     * @authere
+     */
+    int updataTBankCard(Integer UserId,Long myBlance);
+
 }

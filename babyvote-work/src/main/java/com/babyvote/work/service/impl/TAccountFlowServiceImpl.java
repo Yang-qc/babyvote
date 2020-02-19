@@ -17,4 +17,16 @@ import org.springframework.stereotype.Service;
 @Service
 public class TAccountFlowServiceImpl extends ServiceImpl<TAccountFlowMapper, TAccountFlow> implements TAccountFlowService {
 
+    /**
+     * 生成一条账户流水
+     * 1. 充值审批成功后生成流水
+     * 2.
+     * @param tAccountFlow
+     * @return
+     * @auther 李
+     */
+    @Override
+    public int insertTAccountFlow(TAccountFlow tAccountFlow) {
+        return baseMapper.insert(tAccountFlow);
+    }
 }
