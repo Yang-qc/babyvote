@@ -22,4 +22,11 @@ public interface TBankCardMapper extends BaseMapper<TBankCard> {
      * @auther 李
      */
     int updateByUserId(@Param("UserId") Integer UserId,@Param("myBalance") Long myBalance);
+
+    /**
+     * 根据用户id查询银行卡信息
+     * @param userId
+     * @return
+     */
+    TBankCard selectByUserId(@Param("userId")String userId);
 }

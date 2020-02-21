@@ -2,6 +2,7 @@ package com.babyvote.work.controller;
 
 
 import com.babyvote.common.response.Result;
+import com.babyvote.common.response.ResultListPage;
 import com.babyvote.model.domain.TBankCard;
 import com.babyvote.work.service.TBankCardService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +14,7 @@ import org.springframework.web.bind.annotation.*;
  * @since 2020-02-12
  */
 @RestController
-@RequestMapping("/user/bankcard")
+@RequestMapping("/user/bankcard/")
 public class  TBankCardController {
 
     @Autowired
@@ -34,15 +35,12 @@ public class  TBankCardController {
 
     /**
      * 获取银行卡信息
-     * @param accountId
+     * @param tBankCard
      * @return
      */
-    @PostMapping("get/{accountId}")
-    public Result getBankInfo(@PathVariable String accountId){
-        System.out.println("获取银行卡信息");
-//        tBankCardService.getByUserId(accountId);
-        return Result.ok();
-
+    @PostMapping("getBankInfo")
+    public Result getBankInfo(TBankCard tBankCard){
+        return Result.ok(new ResultListPage( tBankCardService.getByUserId(tBankCard)));
     }
 }
 

@@ -19,8 +19,9 @@ public class TBankCardServiceImpl extends ServiceImpl<TBankCardMapper, TBankCard
     private TBankCardMapper bankCardMapper;
 
     @Override
-    public void getByUserId(String UserId) {
-
+    public TBankCard getByUserId(TBankCard tBankCard) {
+        System.out.println("获取用户id："+tBankCard.getUserId());
+        return bankCardMapper.selectByUserId(tBankCard.getUserId());
     }
 
     /**

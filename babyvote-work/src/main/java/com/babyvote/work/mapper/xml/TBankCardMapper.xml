@@ -5,4 +5,8 @@
     <update id="updateByUserId">
       UPDATE t_bank_card SET balance=balance+${myBalance} WHERE user_id=${UserId}
     </update>
+
+    <select id="selectByUserId" resultType="com.babyvote.model.domain.TBankCard">
+        select * from t_bank_card where user_id=${userId}
+    </select>
 </mapper>
