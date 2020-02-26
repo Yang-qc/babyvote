@@ -30,7 +30,9 @@ public enum ResultCodeEnum implements ResultCode {
     DATA_DICTIONARY_ENTRY_MODIFICATION_FAILED(false,21021,"数据字典项修改失败！"),
     DATA_DICTIONARY_ENTRY_ADD_TO_FAILED(false,21022,"数据字典项添加失败！"),
 
-    FAILED_TO_ADD_LOG(false,21023,"日志添加失败！")
+    FAILED_TO_ADD_LOG(false,21023,"日志添加失败！"),
+
+    INSUFFICIENT_ACCOUNT_BALANCE(false,21024,"账户余额不足，请充值后重新还款!")
     ;
 
 

@@ -27,4 +27,11 @@ public interface TUserWalletService extends IService<TUserWallet> {
      * @return
      */
     TUserWallet findByUserId(Integer userId);
+
+    /**
+     * 根据账号id查询余额等信息
+     * @param userId
+     * @return
+     */
+    TUserWallet findByUserId(String userId);
 }

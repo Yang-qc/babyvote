@@ -2,7 +2,6 @@ package com.babyvote.model.domain;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import java.util.Date;
-import com.baomidou.mybatisplus.annotation.Version;
 import com.baomidou.mybatisplus.annotation.TableId;
 import java.io.Serializable;
 import io.swagger.annotations.ApiModel;
@@ -10,6 +9,7 @@ import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
+import org.springframework.format.annotation.DateTimeFormat;
 
 /**
  * <p>
@@ -61,17 +61,20 @@ public class TRepaymentDetail implements Serializable {
     @ApiModelProperty(value = "还款期数(第几月还款)")
     private Integer period;
 
+    @DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")
     @ApiModelProperty(value = "本期还款截止日期")
     private Date deadline;
 
+    @DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")
     @ApiModelProperty(value = "还款时间")
     private Date repaymentTime;
 
     @ApiModelProperty(value = "还款方式")
     private Integer repaymentType;
 
+    @DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")
     @ApiModelProperty(value = "创建时间")
-    private String createTime;
+    private Date createTime;
 
 
 }

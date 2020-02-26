@@ -10,6 +10,7 @@ import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
+import org.springframework.format.annotation.DateTimeFormat;
 
 /**
  * <p>
@@ -39,10 +40,10 @@ public class TRepayment implements Serializable {
 
     @ApiModelProperty(value = "借款标题")
     private String borrowTitle;
-
+    @DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")
     @ApiModelProperty(value = "截止日期")
     private Date deadline;
-
+    @DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")
     @ApiModelProperty(value = "还款日期")
     private Date repaymentTime;
 
@@ -66,7 +67,7 @@ public class TRepayment implements Serializable {
 
     @ApiModelProperty(value = "还款方式（1等额本息,2先息后本）")
     private Integer repaymentType;
-
+    @DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")
     @ApiModelProperty(value = "创建时间")
     private Date createTime;
 

@@ -76,5 +76,6 @@ public class TRepaymentQuery implements Serializable {
     @ApiModelProperty(value = "每页展示数量")
     private Integer pageSize;
 
-
+    @ApiModelProperty(value = "用户id")
+    private String userId;
 }

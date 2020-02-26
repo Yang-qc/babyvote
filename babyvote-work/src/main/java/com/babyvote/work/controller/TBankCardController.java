@@ -23,6 +23,7 @@ public class  TBankCardController {
      * 绑定银行卡信息
      * @param tBankCard
      * @return
+     * @auther 杨
      */
     @PostMapping("add")
     public Result add(TBankCard tBankCard){
@@ -37,10 +38,10 @@ public class  TBankCardController {
      * 获取银行卡信息
      * @param tBankCard
      * @return
+     * @auther 杨
      */
     @PostMapping("getBankInfo")
     public Result getBankInfo(TBankCard tBankCard){
         return Result.ok(new ResultListPage( tBankCardService.getByUserId(tBankCard)));
     }
 }
-

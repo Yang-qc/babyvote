@@ -23,4 +23,17 @@ public interface TRepaymentService extends IService<TRepayment> {
      */
     public void getByBorrowId(Page<TRepayment> pageParam, TRepaymentQuery tRepaymentQuery);
 
+    /**
+     * 还款
+     * @param id
+     * @param userId
+     */
+    public void repay(String id,String userId);
+
+    /**
+     * 更新投资用户收益明细
+     * @param tRepayment
+     */
+    public void eidtByUser(TRepayment tRepayment);
+
 }

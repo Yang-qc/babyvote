@@ -1,7 +1,9 @@
 package com.babyvote.work.service;
 
+import com.babyvote.common.request.TRepaymentDetailQuery;
 import com.babyvote.model.domain.TRepaymentDetail;
 import com.babyvote.work.pojo.TRepaymentDetailVo;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 import java.util.List;
@@ -23,4 +25,18 @@ public interface TRepaymentDetailService extends IService<TRepaymentDetail> {
      * @return
      */
     List<TRepaymentDetailVo> findDetailByBorrowId(Integer id);
+
+
+    /**
+     * 还款明细分页查询
+     * @param tRepaymentDetailQuery
+     */
+    void selectDetailAll(Page<TRepaymentDetail> pageParam, TRepaymentDetailQuery tRepaymentDetailQuery);
+
+    /**
+     * 根据id更新收款明细
+     * @param repaymentDetail
+     * @return
+     */
+    int updateDetail(TRepaymentDetail repaymentDetail);
 }
