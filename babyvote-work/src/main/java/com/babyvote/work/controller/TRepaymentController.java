@@ -40,10 +40,6 @@ public class TRepaymentController implements TRepaymentControllerApi {
     @PostMapping("getByBorrowId")
     @Override
     public Result getByBorrowId(TRepaymentQuery tRepaymentQuery) {
-        if (StringUtils.isEmpty(tRepaymentQuery.getNowPage())) {
-            tRepaymentQuery.setNowPage(1);
-            tRepaymentQuery.setPageSize(5);
-        }
         Page<TRepayment> pageParam = new Page<>(tRepaymentQuery.getNowPage(), tRepaymentQuery.getPageSize());
         tRepaymentService.getByBorrowId(pageParam, tRepaymentQuery);
         return Result.ok(new ResultListPage(pageParam.getRecords(), pageParam.getPages(), pageParam.getTotal(), pageParam.getCurrent(), pageParam.getSize()));

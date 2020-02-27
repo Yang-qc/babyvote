@@ -47,6 +47,6 @@ public class TUserWalletServiceImpl extends ServiceImpl<TUserWalletMapper, TUser
      */
     @Override
     public TUserWallet findByUserId(String userId) {
-        return baseMapper.selectById(userId);
+        return baseMapper.findByUserId(userId);
     }
 }

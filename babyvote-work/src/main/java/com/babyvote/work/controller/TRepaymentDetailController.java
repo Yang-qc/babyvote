@@ -46,10 +46,6 @@ public class TRepaymentDetailController {
 
     @PostMapping("selectDetailAll")
     public Result selectDetailAll(TRepaymentDetailQuery tRepaymentDetailQuery){
-        if (StringUtils.isEmpty(tRepaymentDetailQuery.getNowPage())) {
-            tRepaymentDetailQuery.setNowPage(1);
-            tRepaymentDetailQuery.setPageSize(5);
-        }
         Page<TRepaymentDetail> pageParam = new Page<>(tRepaymentDetailQuery.getNowPage(), tRepaymentDetailQuery.getPageSize());
         detailService.selectDetailAll(pageParam, tRepaymentDetailQuery);
         return Result.ok(new ResultListPage(pageParam.getRecords(), pageParam.getPages(), pageParam.getTotal(), pageParam.getCurrent(), pageParam.getSize()));

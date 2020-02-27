@@ -22,4 +22,6 @@ public interface TBidService extends IService<TBid> {
      * @auther 李
      */
     List<TBid> findTBidByborrowId(Integer id);
+
+
 }

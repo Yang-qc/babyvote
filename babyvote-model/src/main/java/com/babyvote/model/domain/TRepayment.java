@@ -2,7 +2,7 @@ package com.babyvote.model.domain;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import java.util.Date;
-import com.baomidou.mybatisplus.annotation.Version;
+
 import com.baomidou.mybatisplus.annotation.TableId;
 import java.io.Serializable;
 import io.swagger.annotations.ApiModel;
