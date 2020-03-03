@@ -23,12 +23,10 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * <p>
  * 还款服务实现类
- * </p>
- *
  * @author 宝贝投项目组
  * @since 2020-02-12
+ * @return 杨
  */
 @Service
 @Transactional
@@ -50,6 +48,7 @@ public class TRepaymentServiceImpl extends ServiceImpl<TRepaymentMapper, TRepaym
      * 还款分页查询
      * @param pageParam
      * @param tRepaymentQuery
+     * @return 杨
      */
     @Override
     public void getByBorrowId(Page<TRepayment> pageParam, TRepaymentQuery tRepaymentQuery) {
@@ -83,6 +82,7 @@ public class TRepaymentServiceImpl extends ServiceImpl<TRepaymentMapper, TRepaym
      * 还款
      * @param id
      * @param userId
+     * @return 杨
      */
     @Override
     public void repay(String id, String userId) {
@@ -136,35 +136,24 @@ public class TRepaymentServiceImpl extends ServiceImpl<TRepaymentMapper, TRepaym
         }
         //修改还款状态
         baseMapper.updateById(tRepayment);
-        //3、还款清算
-        //是否存在未还款的周期
-
-        //是否存在逾期的周期
-        //判断标的状态
-        //判断用户是否有未还款的 修改状态为已还清
-        //借款人没有过任何1次的逾期还款时(即全部正常还清),增加借款人信用得分10分，同时增加授信额度和剩余授信额度
     }
 
     /**
      * 更新投资用户收益明细
      * @param tRepayment
+     * @return 杨
      */
     public void eidtByUser(TRepayment tRepayment) {
         //查询所有相关投资人信息，          获取的值需要重新测试
         QueryWrapper<TRepaymentDetail> queryWrapper = new QueryWrapper<>();
-//        queryWrapper.eq("borrow_user_id", tRepayment.getBorrowUserId());
         queryWrapper.eq("borrow_id",tRepayment.getBorrowId());
          List<TRepaymentDetail> tRepaymentDetails =tRepaymentDetailMapper.selectList(queryWrapper);
-        System.out.println("测试还款信息/收款明细："+tRepaymentDetails);
         for(TRepaymentDetail repaymentDetail:tRepaymentDetails){
             //获取投资人钱包
             TUserWallet userWallet = tUserWalletService.findByUserId(repaymentDetail.getBidUserId());
             System.out.println(repaymentDetail.getBidUserId());
-            System.out.println("测试投资人钱包信息："+userWallet);
             //更新投资人账户余额=账户余额+本期还款
             Long availableAmount=userWallet.getAvailableAmount()+repaymentDetail.getPrincipal();
-            System.out.println("更新前的账户余额："+userWallet.getAvailableAmount());
-            System.out.println("更新后的账户余额："+availableAmount);
             userWallet.setAvailableAmount(availableAmount);
             //更新投资人代收利息=代收利息-本期还款总利息
             Long interestPending=userWallet.getInterestPending()-repaymentDetail.getInterest();
@@ -195,15 +184,13 @@ public class TRepaymentServiceImpl extends ServiceImpl<TRepaymentMapper, TRepaym
     /**
      * 还款成功，为投资人账户添加收款明细
      * @param tRepayment
+     * @return 杨
      */
     public void addDetail(TRepayment tRepayment) {
         //获取多个投资人集合
         List<TBid> tBidByborrowId = tBidService.findTBidByborrowId(Integer.parseInt(tRepayment.getBorrowId()));
         for (TBid bid :tBidByborrowId){
-            String userName=bid.getBidUsername();
-            System.out.println("投资人姓名："+userName);
             TRepaymentDetail detail = new TRepaymentDetailVo();
-//            detail.setId(tRepayment.getId());//收款明细id
             detail.setBidId(bid.getBidUserId());//标id
             detail.setBorrowId(bid.getBorrowId());//借款id
             detail.setRepaymentId(bid.getBorrowId());//还款id

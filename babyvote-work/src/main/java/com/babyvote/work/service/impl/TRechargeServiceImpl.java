@@ -1,6 +1,9 @@
 package com.babyvote.work.service.impl;
 
+import com.babyvote.common.request.TRechargeQuery;
+import com.babyvote.common.util.DateUtil;
 import com.babyvote.model.domain.TAccountFlow;
+import com.babyvote.model.domain.TBankCard;
 import com.babyvote.model.domain.TRecharge;
 import com.babyvote.model.domain.TUserWallet;
 import com.babyvote.work.mapper.TRechargeMapper;
@@ -12,6 +15,7 @@ import com.babyvote.work.service.TUserWalletService;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.interceptor.TransactionAspectSupport;
@@ -39,6 +43,7 @@ public class TRechargeServiceImpl extends ServiceImpl<TRechargeMapper, TRecharge
 
     @Autowired
     private TBankCardService bankCardService;
+
     /**
      *  根据时间和状态查询充值数据
      * @param pageParam
@@ -101,5 +106,54 @@ public class TRechargeServiceImpl extends ServiceImpl<TRechargeMapper, TRecharge
         }
         TransactionAspectSupport.currentTransactionStatus().setRollbackOnly();
        return 0;
+    }
+
+    /**
+     * 充值分页查询
+     * @param pageParam
+     * @param tRechargeQuery
+     * @auther 杨
+     */
+    @Override
+    public void selectRecharge(Page<TRecharge> pageParam, TRechargeQuery tRechargeQuery) {
+        QueryWrapper<TRecharge> queryWrapper = new QueryWrapper<>();
+        queryWrapper.orderByDesc("id");
+        //获取用户id
+        String userId = tRechargeQuery.getUserId();
+        //获取还款状态
+        Integer state = tRechargeQuery.getState();
+        if (!StringUtils.isEmpty(userId)) {
+            queryWrapper.eq("user_id", userId);
+        }
+        if (!StringUtils.isEmpty(state)) {
+            queryWrapper.eq("state", state);
+        }
+        baseMapper.selectPage(pageParam,queryWrapper);
+    }
+
+    /**
+     * 账户充值
+     * @param tRecharge
+     */
+    @Override
+    public void addRecharge(TRecharge tRecharge) {
+        System.out.println("测试新增数据："+tRecharge);
+        //充值审核状态1、审核中(默认) 2、通过 0、拒绝
+        tRecharge.setState(1);
+        //为交易号生成十位数的时间戳唯一ID
+        String dateUtil = DateUtil.getDateUtil();
+        tRecharge.setTradeNo(dateUtil);
+        tRecharge.setRechargeTime(new Date());
+        tRecharge.setCreateTime(new Date());
+        //充值明细添加一条数据
+        baseMapper.insert(tRecharge);
+        //减少银行卡余额,
+        TBankCard tBankCard = new TBankCard();
+        tBankCard.setUserId(tRecharge.getUserId());
+        TBankCard byUserId = bankCardService.getByUserId(tBankCard);
+        Long myBlance=byUserId.getBalance() - tRecharge.getAmount();
+        byUserId.setBalance(myBlance);
+        //更新银行卡余额信息
+        bankCardService.updateById(byUserId);
     }
 }

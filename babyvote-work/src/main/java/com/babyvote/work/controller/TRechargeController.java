@@ -1,18 +1,24 @@
 package com.babyvote.work.controller;
 
 
+import com.babyvote.common.request.TRechargeQuery;
 import com.babyvote.common.response.Result;
 import com.babyvote.common.response.ResultListPage;
+import com.babyvote.common.util.DateUtil;
 import com.babyvote.model.domain.TRecharge;
 import com.babyvote.work.pojo.RequestParam;
+import com.babyvote.work.service.TBankCardService;
 import com.babyvote.work.service.TRechargeService;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.Date;
 
 /**
  * <p>
@@ -57,5 +63,33 @@ public class TRechargeController {
         }
         return Result.error();//失败
     }
+
+    /**
+     * 充值分页查询--前端
+     * @param tRechargeQuery
+     * @return
+     */
+    @PostMapping("selectRecharge")
+    public Result selectRecharge(TRechargeQuery tRechargeQuery){
+        Page<TRecharge> pageParam = new Page<>(tRechargeQuery.getNowPage(), tRechargeQuery.getPageSize());
+        rechargeService.selectRecharge(pageParam, tRechargeQuery);
+        return Result.ok(new ResultListPage(pageParam.getRecords(), pageParam.getPages(), pageParam.getTotal(), pageParam.getCurrent(), pageParam.getSize()));
+    }
+
+    /**
+     * 充值
+     * @param tRecharge
+     * @return
+             */
+    @PostMapping("addRecharge")
+    public Result addRecharge(TRecharge tRecharge){
+       try {
+           rechargeService.addRecharge(tRecharge);
+           return Result.ok();
+       }catch (Exception e){
+           return Result.error();
+       }
+    }
+
 }
 

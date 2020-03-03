@@ -41,9 +41,4 @@ public interface TRepaymentDetailService extends IService<TRepaymentDetail> {
     int updateDetail(TRepaymentDetail repaymentDetail);
 
 
-//    /**
-//     * 添加收款明细
-//     * @param tRepaymentDetail
-//     */
-//    void add(TRepaymentDetail tRepaymentDetail);
 }

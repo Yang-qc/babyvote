@@ -29,4 +29,5 @@ public interface TBankCardMapper extends BaseMapper<TBankCard> {
      * @return
      */
     TBankCard selectByUserId(@Param("userId")String userId);
+
 }

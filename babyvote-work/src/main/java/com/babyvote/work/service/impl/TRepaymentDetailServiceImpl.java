@@ -57,7 +57,7 @@ public class TRepaymentDetailServiceImpl extends ServiceImpl<TRepaymentDetailMap
     }
 
     /**
-     * 还款分页查询
+     * 收款明细分页查询---根据投资人id/账号id查询收款明细
      * @param pageParam
      * @param tRepaymentDetailQuery
      */
@@ -65,14 +65,11 @@ public class TRepaymentDetailServiceImpl extends ServiceImpl<TRepaymentDetailMap
     public void selectDetailAll(Page<TRepaymentDetail> pageParam, TRepaymentDetailQuery tRepaymentDetailQuery) {
         QueryWrapper<TRepaymentDetail> queryWrapper = new QueryWrapper<>();
         queryWrapper.orderByDesc("id");
-
         String bidUserId=tRepaymentDetailQuery.getUserId();
-        System.out.println("测试:"+bidUserId);
         //获取还款方式
         Integer repaymentType = tRepaymentDetailQuery.getRepaymentType();
         //查询条件
         if (!StringUtils.isEmpty(bidUserId)) {
-            System.out.println("id查询");
             queryWrapper.eq("bid_user_id", bidUserId);
         }
         if (!StringUtils.isEmpty(repaymentType)) {
