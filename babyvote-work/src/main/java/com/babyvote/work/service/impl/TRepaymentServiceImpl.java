@@ -151,7 +151,6 @@ public class TRepaymentServiceImpl extends ServiceImpl<TRepaymentMapper, TRepaym
         for(TRepaymentDetail repaymentDetail:tRepaymentDetails){
             //获取投资人钱包
             TUserWallet userWallet = tUserWalletService.findByUserId(repaymentDetail.getBidUserId());
-            System.out.println(repaymentDetail.getBidUserId());
             //更新投资人账户余额=账户余额+本期还款
             Long availableAmount=userWallet.getAvailableAmount()+repaymentDetail.getPrincipal();
             userWallet.setAvailableAmount(availableAmount);
