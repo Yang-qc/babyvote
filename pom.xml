@@ -43,7 +43,7 @@
         <fastjson.version>1.2.28</fastjson.version>
         <json.version>20170516</json.version>
         <mysql.version>5.1.47</mysql.version>
-        <guava.version>24.0-jre</guava.version>
+        <guava.version>24.1.1-jre</guava.version>
         <spring-cloud.version>Finchley.SR1</spring-cloud.version>
     </properties>
 
